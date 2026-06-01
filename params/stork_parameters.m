@@ -1,5 +1,7 @@
 % initialize the mav viewer
-addpath('../../mavsim_public/mavsim_matlab/tools');
+[stork_root, ~, ~] = fileparts(fileparts(mfilename('fullpath')));
+addpath(fullfile(stork_root, 'utils'));
+addpath(fullfile(stork_root, '..', 'mavsim_public', 'mavsim_matlab', 'tools'));
 
 MAV.gravity = 9.81;
 

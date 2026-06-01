@@ -16,8 +16,13 @@ stork_simulation/
 │   └── motor_datasheet_notes.md      # BrotherHobby Avenger 2812 V5 910KV specs
 ├── params/
 │   └── stork_parameters.m            # Beard-McLain parameter file for the Stork VTOL
-└── notes/
-    └── assumptions_table.md          # Full assumptions and sources for all parameters
+├── simulation/
+│   └── stork_pose_viewer.m           # Chapter 2: state/pose viewer and sanity check
+├── utils/
+│   └── Euler2Quaternion.m            # Completed implementation (template left blank in mavsim_public)
+└── docs/
+    ├── assumptions_table.md          # Full assumptions and sources for all parameters
+    └── model_state_pose.md           # State/pose model documentation
 ```
 
 The Beard-McLain `mavsim_public` repository sits alongside this repo (not nested inside it):
@@ -38,11 +43,10 @@ The Beard-McLain `mavsim_public` repository sits alongside this repo (not nested
    ```bash
    git clone https://github.com/byu-magicc/mavsim_public.git
    ```
-2. Open MATLAB and set the `mavsim_public` root as your current folder
-3. Right-click `mavsim_matlab` → Add to Path → Selected Folders and Subfolders
-4. Do the same for `mavsim_simulink`
-5. Run `savepath` in the Command Window to persist the paths
-6. Copy `stork_parameters.m` into `mavsim_public/mavsim_matlab/parameters/`
+2. Make sure both folders sit side by side in the same parent directory
+3. Run `stork_chap2.m` — all paths are resolved automatically via `mfilename`
+
+**Note:** `mavsim_public` contains template files left intentionally blank as student exercises. Completed implementations are provided in the `utils/` folder of this repo and take precedence automatically.
 
 ---
 
