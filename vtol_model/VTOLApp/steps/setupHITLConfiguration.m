@@ -1,0 +1,35 @@
+% load contact data and units
+
+%   Copyright 2024-2026 The MathWorks, Inc.
+
+load(fullfile('data','contact.mat'));
+load(fullfile('data','SIUnitData.mat'));
+
+% Sample time 
+SampleTime = 0.02;
+%% Environmental effects
+
+%Wind model
+Wind=0;
+
+% Enable ground model
+Groundon = 1;
+
+% Disable data logging
+Deployment = true;
+%% Initial Pose
+%Set attitude to be 0.
+iniRoll=0;
+iniYaw=0;
+initPitch=0;
+%% VTOL Dynamics
+%Set VTOL Dynamics:Aerodynamics and Geometry Parameters
+uavParam=exampleHelperSetVTOLDynamics;
+%%Initialize Control and Guidance gains for Tiltrotor
+%% Hover Guidance Controls
+R_WAYPOINTTRANSITION=1;
+R_LOOKAHEAD=5;
+%% HIL MAVLink Message Update Frequencies
+gpsFreq = 25;
+heartbeatFreq = 1;
+
